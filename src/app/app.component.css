@@ -1,0 +1,167 @@
+body {
+  margin: 0;
+  padding: 0 !important;
+}
+
+.raleway-title {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.raleway-text {
+  font-size: 15px;
+}
+
+.raleway-title,
+.raleway-text {
+  font-family: "Raleway";
+  color: white;
+}
+
+.oswald-title {
+  font-size: 60px;
+  word-spacing: 10px;
+}
+
+.oswal-subtitle {
+  font-size: 30px;
+  word-spacing: 10px;
+}
+
+.oswal-subtitle,
+.oswald-title {
+  font-family: "Oswald", sans-serif;
+  color: white;
+  font-weight: 400;
+}
+
+.information-section {
+  padding-left: 15vw;
+  padding-right: 15vw;
+  padding-top: 3%;
+}
+
+.info-title {
+  font-size: 35px;
+  word-spacing: 10px;
+  font-family: "Oswald", sans-serif;
+  color: black;
+  font-weight: 400;
+}
+
+.info-subtitle {
+  font-size: 30px;
+  font-family: "Oswald", sans-serif;
+  color: #465967;
+  font-weight: 400;
+}
+
+.info-subtitle-2 {
+  font-size: 20px;
+  font-family: "Raleway", sans-serif;
+  color: #465967;
+  font-weight: lighter;
+  align-items: center;
+}
+
+.info-exp-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-exp-desc-text {
+  font-size: 20px;
+  font-family: "Raleway", sans-serif;
+  color: black;
+  font-weight: lighter;
+}
+
+.info-exp-desc-text-timeline {
+  font-size: 20px;
+  font-family: "Raleway", sans-serif;
+  color: black;
+  font-weight: lighter;
+}
+
+.info-exp-title {
+  font-size: 30px;
+  font-family: "Oswald", sans-serif;
+  color: #465967;
+  font-weight: lighter;
+}
+
+.main-landing-div {
+  height: auto;
+  background-image: url("../assets/images/background_1.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+}
+
+.profile-img {
+  border-radius: 40px;
+  border-style: solid;
+  border-width: 10px;
+  border-color: white;
+  height: 250px;
+}
+
+.line-1 {
+  height: 2px;
+  background: white;
+  margin-top: 2em;
+  margin-left: 15vw;
+  margin-right: 15vw;
+}
+
+.line-2 {
+  height: 2px;
+  background: black;
+  margin-top: 1em;
+  width: 100%;
+}
+
+.timeline-img{
+  object-position: center;
+  object-fit: cover;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #465967;
+  border-color: #465967;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #2A3B47;
+  border-color: #2A3B47;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+  box-shadow: 0 0 0 0.2rem #465967;
+}
+
+#show-more-btn{
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .profile-img {
+    height: 175px;
+  }
+
+  .oswald-title {
+    font-size: 40px;
+  }
+
+  .info-exp-header{
+    display: inherit;
+  }
+}
+
+
+
+
+
+

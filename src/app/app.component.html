@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angular</title>
+  </head>
+  <body>
+    <section id="cover">
+      <div class="main-landing-div text-center">
+        <img
+          src="assets/images/handsome.jpg"
+          class="profile-img mt-5"
+          alt="latop"
+        />
+        <div class="mt-5">
+          <h1 class="oswald-title">ALEJANDRO RAMOS GUILLÉN</h1>
+          <div class="line-1"></div>
+          <div
+            class="text-left pt-3 pb-3"
+            style="margin-left: 15vw; margin-right: 15vw"
+          >
+            <h4 class="raleway-title">{{ isEnglishSelected ? labels.PROFESION_TITLE_EN : labels.PROFESION_TITLE_SP}}</h4>
+            <p class="raleway-text">
+              {{ isEnglishSelected ? labels.PROFESION_SUBTITLE_EN : labels.PROFESION_SUBTITLE_SP}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="language" class="information-section text-center" [ngsReveal]="{ reset: true}">
+      <div class="mb-3">
+        <span class="info-subtitle-2 mb-3" >{{ isEnglishSelected ? labels.SEL_LAN_LBL_EN : labels.SEL_LAN_LBL_SP}}</span>
+      </div>
+      <p-selectButton [options]="languages" [tabindex]="5" (onOptionClick)="changeLanguage()" [(ngModel)]="selectedLanguage" optionLabel="name" optionValue="code"></p-selectButton>
+    </section>
+    
+    <section id="educacion" class="information-section" [ngsReveal]="{ reset: true}" >
+      <h1 class="info-title">{{ isEnglishSelected ? labels.EDU_LBL_EN : labels.EDU_LBL_SP}}</h1>
+      <div class="line-2"></div>
+      <h3 class="info-subtitle mt-3">{{ isEnglishSelected ? labels.GYE_UNI_EN : labels.GYE_UNI_ES}}</h3>
+      <h5 class="info-subtitle-2 mt-3">
+        {{ isEnglishSelected ? labels.TITLE_EN : labels.TITLE_ES}}
+      </h5>
+    </section>
+
+    <section id="tecnologias" class="information-section" [ngsReveal]="{ reset: true}" >
+      <h1 class="info-title">{{ isEnglishSelected ? labels.SKILLS_EN : labels.SKILLS_ES}}</h1>
+      <div class="line-2"></div>
+      <div class="row mt-4">
+        <div class="container" ngsReveal>
+          <section class="logo-carousel slider" data-arrows="true">
+            <div class="slide" >
+              <img src="assets/images/tecnologies/flask.png">
+              <h3 class="info-subtitle mt-3">Flask</h3>
+              
+            </div>
+            <div class="slide">
+              <img src="assets/images/tecnologies/angular.png">
+              <h3 class="info-subtitle mt-3">Angular</h3>
+            </div>
+            <div class="slide">
+              <img src="assets/images/tecnologies/java.png">
+              <h3 class="info-subtitle mt-3">Java</h3>
+            </div>
+            <div class="slide">
+              <img src="assets/images/tecnologies/js.png">
+              <h3 class="info-subtitle mt-3">Javascript</h3>
+            </div>
+            <div class="slide">
+              <img src="assets/images/tecnologies/python.png">
+              <h3 class="info-subtitle mt-3">Python</h3>
+            </div>
+            <div class="slide">
+              <img src="assets/images/tecnologies/node.png">
+              <h3 class="info-subtitle mt-3">Node Js</h3>
+            </div>
+            <div class="slide">
+              <img src="assets/images/tecnologies/flutter.png">
+              <h3 class="info-subtitle mt-3">Flutter</h3>
+            </div>
+            <div class="slide">
+              <img src="assets/images/tecnologies/java-android.png">
+              <h3 class="info-subtitle mt-3">Android</h3>
+            </div>
+            <div class="slide">
+              <img src="assets/images/tecnologies/springboot.png">
+              <h3 class="info-subtitle mt-3">Springboot</h3>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiencia" class="information-section" ngsReveal>
+      <h1 class="info-title">{{ isEnglishSelected ? labels.EXP_EN : labels.EXP_ES}}</h1>
+      <div class="line-2"></div>
+      <div class="mt-4" *ngIf="isEnglishSelected" >
+        <p-timeline
+        [value]="expEnglish"
+        align="alternate"
+        styleClass="customized-timeline"
+        class="container reveal"
+        >
+          <ng-template pTemplate="marker" let-exp>
+            <img width="48" height="48" [src]="exp.img" class="timeline-img" alt="companie">
+          </ng-template>
+          <ng-template pTemplate="content" let-exp>
+            <p-card ngsReveal [header]="exp.empresa" [subheader]="exp.interval">
+              <p style="font-size: 1em;"  align="justify" class="info-exp-desc-text-timeline">{{ exp.description }}</p>
+              <button id="show-more-btn" class="btn btn-primary" (click)="displayDialogs(exp)">Ver mas</button>
+            </p-card>
+          </ng-template>
+        </p-timeline>
+      </div>
+      <div class="mt-4" *ngIf="!isEnglishSelected" >
+        <p-timeline
+        [value]="expSpanish"
+        align="alternate"
+        styleClass="customized-timeline"
+        class="container reveal"
+        >
+          <ng-template pTemplate="marker" let-exp>
+            <img width="48" height="48" [src]="exp.img" class="timeline-img" alt="companie">
+          </ng-template>
+          <ng-template pTemplate="content" let-exp>
+            <p-card ngsReveal [header]="exp.empresa" [subheader]="exp.interval">
+              <p style="font-size: 1em;"  align="justify" class="info-exp-desc-text-timeline">{{ exp.description }}</p>
+              <button id="show-more-btn" class="btn btn-primary" (click)="displayDialogs(exp)">Ver mas</button>
+            </p-card>
+          </ng-template>
+        </p-timeline>
+      </div>
+    </section>
+    <section id="proyectos" class="information-section" [ngsReveal]="{ reset: true}" >
+      <h1 class="info-title">{{ isEnglishSelected ? labels.PROY_EN : labels.PROY_ES}}</h1>
+      <div class="line-2"></div>
+      <div class="grid mt-6" *ngIf="isEnglishSelected">
+        <div class="col" *ngFor="let proj of projEnglish">
+          <p-card [header]="proj.name" styleClass="p-card-shadow">
+            <ng-template pTemplate="header" class="text-center">
+              <div class="text-center">
+                <img alt="Card" [ngStyle]="{'height' : proj.imgHeight, 'width': proj.imgWidth, 'border-radius' : '30px'}" [src]="proj.img">
+              </div>
+            </ng-template>
+            <div *ngIf="!proj.finished" style="display: flex" class="mb-2">
+              <h1 class="info-subtitle-2 "> {{labels.CONTRUCTING_EN}} </h1>
+              <img src="assets/images/loading.gif" style="height: 3em; margin-left: 2em;" alt="latop"/>
+            </div>
+            <p align="justify" style="font-size: 1em;" class="info-exp-desc-text-timeline" >{{proj.description}}</p>
+          </p-card>
+        </div>
+      </div>
+      <div class="grid mt-6" *ngIf="!isEnglishSelected">
+        <div class="col" *ngFor="let proj of projSpanish">
+          <p-card [header]="proj.name" styleClass="p-card-shadow">
+            <ng-template pTemplate="header" class="text-center">
+              <div class="text-center">
+                <img alt="Card" [ngStyle]="{'height' : proj.imgHeight, 'width': proj.imgWidth, 'border-radius' : '30px'}" [src]="proj.img">
+              </div>
+            </ng-template>
+            <div *ngIf="!proj.finished" style="display: flex" class="mb-2">
+              <h1 class="info-subtitle-2 "> {{labels.CONTRUCTING_ES}} </h1>
+              <img src="assets/images/loading.gif" style="height: 3em; margin-left: 2em;" alt="latop"/>
+            </div>
+            <p align="justify" style="font-size: 1em;" class="info-exp-desc-text-timeline" >{{proj.description}}</p>
+          </p-card>
+        </div>
+      </div>
+    </section>
+    <section id="proyectos" class="information-section" [ngsReveal]="{ reset: true}" >
+      <h1 class="info-title">{{ isEnglishSelected ? labels.CONTACT_ME_EN : labels.CONTACT_ME_ES}}</h1>
+      <div class="line-2"></div>
+      <div class="card p-5 mt-4 mb-4" style="border-radius: 30px;">
+        <div class="field">
+            <label for="nombre">{{ isEnglishSelected ? labels.NAME_LBL_FORM_EN : labels.NAME_LBL_FORM_ES}}</label>
+            <input id="nombre" [(ngModel)]="mensaje.nombre!" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+            <p *ngIf="submited && !mensaje.nombre" style="color: red">{{ isEnglishSelected ? labels.NAME_ERROR_LBL_FORM_EN : labels.NAME_ERROR_LBL_FORM_ES}}</p>
+        </div>
+        <div class="field">
+            <label for="mail">{{ isEnglishSelected ? labels.MAIL_LBL_FORM_EN : labels.MAIL_LBL_FORM_ES}}</label>
+            <input id="mail" [(ngModel)]="mensaje.correo!" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+            
+            <p *ngIf="submited && !mensaje.correo" style="color: red">{{ isEnglishSelected ? labels.MAIL_ERROR_LBL_EN : labels.MAIL_ERROR_LBL_ES}}</p>
+            <p *ngIf="submited && !valid_mail" style="color: red">{{ isEnglishSelected ? labels.BAD_MAIL_ERROR_LBL_EN : labels.BAD_MAIL_ERROR_LBL_ES}}</p>
+
+        </div>
+        <div class="field">
+          <label for="desc">{{ isEnglishSelected ? labels.HELP_LBL_EN : labels.HELP_LBL_ES}}</label>
+            <textarea id="desc" [(ngModel)]="mensaje.descripcion!" type="text" rows="4" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"></textarea>
+            <p *ngIf="submited && !mensaje.descripcion" style="color: red">{{ isEnglishSelected ? labels.HELP_ERR_LBL_EN : labels.HELP_ERR_LBL_ES}}</p>
+        </div>
+        <div class="field text-center">
+          <button pButton pRipple (click)="submitMessage()" type="button" [label]=" isEnglishSelected ? labels.SEND_LBL_EN : labels.SEND_LBL_ES" class="p-button-rounded"></button>
+        </div>
+    </div>
+    </section>
+    <p-dialog [header]="dialogCompanie" [modal]="true" [style]="{width: '90vw'}" [(visible)]="displayDialog">
+      <h5 class="info-subtitle-2">{{dialogInterval}}</h5>
+      <p class="info-exp-desc-text mt-4">{{dialogDescription}}
+      </p>
+    </p-dialog>
+  </body>
+    <!-- Site footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <p class="copyright-text">Copyright &copy; {{year}} {{ isEnglishSelected ? labels.COPYRIGHT_LBL_EN : labels.COPYRIGHT_LBL_ES}}
+          </p>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <ul class="social-icons">
+            <li><a class="github" href="https://github.com/Al327"><i class="fa fa-github"></i></a></li>
+            <li><a class="linkedin" href="https://www.linkedin.com/in/alejandroramosguillen/"><i class="fa fa-linkedin"></i></a></li>   
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</html>
+
