@@ -63,7 +63,6 @@ export class AppComponent {
   }
 
   changeLanguage(){
-    console.log("SELECT LANG CODE ", this.selectedLanguage)
     this.isEnglishSelected = this.selectedLanguage == 'EN';
   }
 

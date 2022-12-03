@@ -22,13 +22,13 @@ export const ProjectsSpanish = [
   },
 
   {
-    name: 'Smart Wallet',
+    name: 'Cenego',
     finished: false,
-    img: 'assets/images/projects/smart_wallet.png',
-    description: `Aplicación gratis y opensource de finanzas personales dotada de features surgidas al probar distintas apps de este tipo, buscando suplir las necesidades de las personas al manejar sus gastos e ingresos. Aplicación desarrollandose con ionic y firebase para conexion con web de visualización de datos`,
+    img: 'assets/images/projects/CenegoIcon.png',
+    description: `Plataforma que busca brindar una herramienta de generación de pruebas aleatorias y calificación automática a docentes que impartan educación presencial a través del uso de visión artificial. Aplicación desarrollandose en python y flask`,
     github: '',
-    imgHeight: '200px',
-    imgWidth: '200px',
+    imgHeight: '150px',
+    imgWidth: '350px',
   },
 ];
 
@@ -51,18 +51,18 @@ export const ProjectsEnglish = [
       img: 'assets/images/projects/campers.png',
       description: `Camping platform for Ecuador that seeks to unify the solutions for campers nationwide, including various services for camping, shops and tours. Developing with Angular and Firebase for the web platform and flutter in the mobile application.`,
       github: '',
-      imgHeight: '200px',
+      imgHeight: '175px',
       imgWidth: '300px',
     },
   
     {
-      name: 'Smart Wallet',
+      name: 'Cenego',
       finished: false,
-      img: 'assets/images/projects/smart_wallet.png',
-      description: `Free and open source personal finance app equipped with features that emerged from testing different applications of this type, seeking to meet the needs of people when managing their expenses and income. Application developed with ionic and firebase for connection with data visualization web`,
+      img: 'assets/images/projects/CenegoIcon.png',
+      description: `Platform that seeks to provide a tool for the generation of random tests and automatic qualification to teachers who teach face-to-face education through the use of artificial vision. Application being developed in python and flask`,
       github: '',
-      imgHeight: '200px',
-      imgWidth: '200px',
+      imgHeight: '150px',
+      imgWidth: '350px',
     },
   ];
   
