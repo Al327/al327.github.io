@@ -28,7 +28,7 @@ export const ProjectsSpanish = [
     description: `Plataforma que busca brindar una herramienta de generación de pruebas aleatorias y calificación automática a docentes que impartan educación presencial a través del uso de visión artificial. Aplicación desarrollandose en python y flask`,
     github: '',
     imgHeight: '150px',
-    imgWidth: '350px',
+    imgWidth: '275px',
   },
 ];
 
@@ -62,7 +62,7 @@ export const ProjectsEnglish = [
       description: `Platform that seeks to provide a tool for the generation of random tests and automatic qualification to teachers who teach face-to-face education through the use of artificial vision. Application being developed in python and flask`,
       github: '',
       imgHeight: '150px',
-      imgWidth: '350px',
+      imgWidth: '275px',
     },
   ];
   
